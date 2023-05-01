@@ -46,7 +46,7 @@ public class NotificationListener extends NotificationListenerService {
     private void handleNotification(StatusBarNotification notification, boolean isRemoved) {
         String packageName = notification.getPackageName();
         Bundle extras = notification.getNotification().extras;
-        byte[] appIcon = getAppIcon(packageName);
+//        byte[] appIcon = getAppIcon(packageName);
         byte[] largeIcon = null;
         Action action = NotificationUtils.getQuickReplyAction(notification.getNotification(), packageName);
 
@@ -63,7 +63,7 @@ public class NotificationListener extends NotificationListenerService {
             cachedNotifications.put(notification.getId(), action);
         }
 
-        intent.putExtra(NotificationConstants.NOTIFICATIONS_ICON, appIcon);
+//        intent.putExtra(NotificationConstants.NOTIFICATIONS_ICON, appIcon);
         intent.putExtra(NotificationConstants.NOTIFICATIONS_LARGE_ICON, largeIcon);
 
         if (extras != null) {
